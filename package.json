@@ -1,0 +1,35 @@
+{
+  "name": "lifdex",
+  "version": "0.0.0",
+  "description": "A desktop app for Lifx lights",
+  "main": "./src/main.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsTyd/LifDex.git"
+  },
+  "keywords": [
+    "lifx",
+    "desktop"
+  ],
+  "author": "Daniel Sousa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsTyd/LifDex/issues"
+  },
+  "homepage": "https://github.com/itsTyd/LifDex#readme",
+  "devDependencies": {
+    "css-loader": "^3.1.0",
+    "electron": "^6.0.0",
+    "node-sass": "^4.12.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
