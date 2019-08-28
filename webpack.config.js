@@ -1,5 +1,6 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 const commonConfig = {
     mode: "development",
@@ -21,11 +22,11 @@ const commonConfig = {
             {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "awesome-typescript-loader"
-                    }
-                ]
+                loader: "awesome-typescript-loader",
+                options: {
+                    useBabel: true,
+                    babelCore: "@babel/core"
+                }
             },
             {
                 enforce: "pre",
@@ -53,16 +54,17 @@ module.exports = [
                 __dirname: false
             },
             target: 'electron-renderer',
-            entry: { gui: './src/gui.tsx' },
+            entry: { gui: './src/gui/gui.tsx' },
             output: {
                 path: path.resolve(__dirname, "dist"),
                 filename: "gui/[name].js"
             },
-            plugins: [new HtmlWebpackPlugin()],
-            externals: {
-                "react": "React",
-                "react-dom": "ReactDOM"
-            }
+            plugins: [
+                new HtmlWebpackPlugin(), 
+                new webpack.ProvidePlugin({
+                    "React": "react"
+                })
+            ]
         },
         commonConfig)
 ]

@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/itsTyd/LifDex#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "awesome-typescript-loader": "^5.2.1",

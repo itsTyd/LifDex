@@ -8,11 +8,8 @@ function onReady() {
     height: 600
   })
 
-  const fileName: string = `file://${__dirname}/index.html`;
-  mainWindow.loadURL(fileName);
+  mainWindow.loadFile("index.html");
   mainWindow.on('close', () => app.quit());
-
-  document.getElementsByTagName('body')[0].innerHTML = `node Version: ${process.versions.node}`
 }
 
 app.on('ready', () => onReady());
