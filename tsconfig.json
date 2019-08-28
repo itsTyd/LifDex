@@ -1,0 +1,16 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "target": "es6",
+        "jsx": "preserve",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "skipLibCheck": true
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

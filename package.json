@@ -4,6 +4,9 @@
   "description": "A desktop app for Lifx lights",
   "main": "./src/main.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "electron": "electron ./dist/main.js",
+    "start": "npm run build && npm run electron"
   },
   "repository": {
     "type": "git",
@@ -20,10 +23,17 @@
   },
   "homepage": "https://github.com/itsTyd/LifDex#readme",
   "devDependencies": {
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^3.1.0",
     "electron": "^6.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
+    "sass-loader": "^7.3.1",
+    "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
+    "typescript": "^3.5.3",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
