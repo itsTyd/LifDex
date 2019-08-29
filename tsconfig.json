@@ -1,16 +1,20 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
+        "allowJs": true,
+        "skipLibCheck": true,
+        "allowUmdGlobalAccess": true,
+        "esModuleInterop": true,
         "sourceMap": true,
         "noImplicitAny": true,
         "target": "es6",
-        "jsx": "preserve",
+        "jsx": "react",
         "moduleResolution": "node",
-        "allowJs": true,
-        "skipLibCheck": true
     },
     "exclude": [
         "node_modules",
-        "**/*.spec.ts"
+        "**/*.spec.ts",
+        "dist",
+        "*.config.js"
     ]
 }

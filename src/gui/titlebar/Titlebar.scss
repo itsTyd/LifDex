@@ -1,0 +1,15 @@
+.title-bar {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    background-color: #1d1a1f;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .app-buttons {
+        display: inline-flex;
+    }
+}

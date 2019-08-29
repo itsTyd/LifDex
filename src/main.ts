@@ -1,17 +1,30 @@
-import { app, BrowserWindow } from 'electron'
-declare var __dirname: string
-let mainWindow: Electron.BrowserWindow
+import { app, BrowserWindow } from 'electron';
+declare var __dirname: string;
+let mainWindow: Electron.BrowserWindow;
 
-function onReady() {
+const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
-    height: 600
-  })
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  });
 
-  mainWindow.loadFile("index.html");
-  mainWindow.on('close', () => app.quit());
+  if(process.env.NODE_ENV === "development") {
+    mainWindow.loadFile("index.html");
+  } else {
+    mainWindow.loadURL("https://localhost:3000/");
+  }
+
+  mainWindow.on('closed', () => { mainWindow = null; });
 }
 
-app.on('ready', () => onReady());
-app.on('window-all-closed', () => app.quit());
-console.log(`Electron Version ${app.getVersion()}`);
+app.on('ready', createWindow);
+
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
