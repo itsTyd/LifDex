@@ -7,23 +7,6 @@ const OUTPUT_DIR = path.resolve(__dirname, 'dist');
 
 const commonConfig = {
     devtool: "source-map",
-    devServer: {
-        contentBase: OUTPUT_DIR,
-        stats: {
-            colors: true,
-            chunks: false,
-            children: false
-        },
-        before() {
-            spawn(
-                'electron --dev',
-                ['./dist/main.js'],
-                { shell: true, env: process.env, stdio: 'inherit' }
-            )
-            .on('close', code => process.exit(0))
-            .on('error', spawnError => console.error(spawnError));
-        }
-    },
     resolve: {
         extensions: [".js", ".ts", ".tsx", ".jsx", ".json"]
     },
@@ -52,7 +35,9 @@ const commonConfig = {
                 enforce: "pre",
                 exclude: /node_modules/,
                 test: /\.js$/,
-                loader: "source-map-loader"
+                use: [
+                    { loader: "source-map-loader" },
+                ]
             }
         ]
     }
@@ -67,13 +52,23 @@ module.exports = [
                 path: OUTPUT_DIR,
                 filename: "[name].js"
             },
+            devServer: {
+                port: 3000,
+                hot: true,
+                before() {
+                    spawn(
+                        'electron',
+                        ['./dist/main.js'],
+                        { shell: true, env: process.env, stdio: 'inherit' }
+                    )
+                    .on('close', code => process.exit(0))
+                    .on('error', spawnError => console.error(spawnError));
+                }
+            },
         },
         commonConfig),
       Object.assign(
         {
-            node: {
-                __dirname: false
-            },
             target: 'electron-renderer',
             entry: { gui: './src/gui/gui.tsx' },
             output: {
@@ -81,7 +76,9 @@ module.exports = [
                 filename: "gui/[name].js"
             },
             plugins: [
-                new HtmlWebpackPlugin(), 
+                new HtmlWebpackPlugin({
+                    title: 'LifDex',
+                }), 
                 new webpack.ProvidePlugin({
                     "React": "react"
                 })

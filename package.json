@@ -4,10 +4,11 @@
   "description": "A desktop app for Lifx lights",
   "main": "./src/main.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "npm run clean && webpack --config webpack.config.js",
     "electron": "electron ./dist/main.js",
-    "start": "npm run build && npm run electron",
-    "start:dev": "webpack-dev-server --hot --port 3000 --mode=development --config webpack.config.js"
+    "start": "npm run build -- --mode=production && npm run electron",
+    "start:dev": "npm run build -- --mode=development && webpack-dev-server --mode=development --config webpack.config.js",
+    "clean": "rimraf ./dist/ && rimraf ./.awcache/"
   },
   "repository": {
     "type": "git",
@@ -32,10 +33,10 @@
     "@types/react-dom": "^16.9.0",
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^3.1.0",
-    "css-modules-typescript-loader": "^3.0.0",
     "electron": "^6.0.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
+    "rimraf": "^3.0.0",
     "sass-loader": "^7.3.1",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
