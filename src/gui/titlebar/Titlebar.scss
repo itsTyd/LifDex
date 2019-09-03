@@ -1,15 +1,26 @@
 .title-bar {
     position: relative;
     width: 100%;
-    height: 2rem;
+    height: 2.2rem;
     background-color: #1d1a1f;
     color: white;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    -webkit-app-region: drag;
 
     .app-buttons {
+        position: relative;
         display: inline-flex;
+        width: auto;
+        height: 100%;
+        -webkit-app-region: no-drag;
+
+        .titlebar-btn{
+            position: relative;
+            margin-left: 1.0rem;
+            padding: 0.4rem;
+        }
     }
 }

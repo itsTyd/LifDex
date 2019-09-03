@@ -1,5 +1,5 @@
-import ReactDOM from "react-dom";
-import App from "./app";
+import { render } from "react-dom";
+import App from "./App";
 import './gui.scss';
 
 const body: HTMLElement = document.getElementsByTagName("body")[0];
@@ -8,7 +8,7 @@ container.setAttribute("id", "root");
 
 body.insertBefore(container, body.firstChild);
 
-ReactDOM.render(
+render(
     <App />,
     container
 );
