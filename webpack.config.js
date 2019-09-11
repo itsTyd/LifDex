@@ -76,7 +76,9 @@ module.exports = [
                 filename: "gui/[name].js"
             },
             plugins: [
-                new HtmlWebpackPlugin(), 
+                new HtmlWebpackPlugin({
+                    title: 'LifDex',
+                }), 
                 new webpack.ProvidePlugin({
                     "React": "react"
                 })

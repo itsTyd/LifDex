@@ -6,7 +6,7 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    backgroundColor: "#26202b",
+    minHeight: 400,
     title: "LifDex",
     show: false,
     frame: false,
