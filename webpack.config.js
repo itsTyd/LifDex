@@ -47,7 +47,7 @@ module.exports = [
     Object.assign(
         {
             target: 'electron-main',
-            entry: { main: './src/main.ts' },
+            entry: { main: './src/app/main.ts' },
             output: {
                 path: OUTPUT_DIR,
                 filename: "[name].js"
@@ -61,7 +61,7 @@ module.exports = [
                         ['./dist/main.js'],
                         { shell: true, env: process.env, stdio: 'inherit' }
                     )
-                    .on('close', code => process.exit(0))
+                    .on('close', () => process.exit(0))
                     .on('error', spawnError => console.error(spawnError));
                 }
             },
@@ -70,7 +70,7 @@ module.exports = [
       Object.assign(
         {
             target: 'electron-renderer',
-            entry: { gui: './src/gui/gui.tsx' },
+            entry: { gui: './src/app/gui/gui.tsx' },
             output: {
                 path: OUTPUT_DIR,
                 filename: "gui/[name].js"

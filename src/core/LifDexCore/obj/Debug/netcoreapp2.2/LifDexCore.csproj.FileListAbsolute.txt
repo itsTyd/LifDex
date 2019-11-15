@@ -1,0 +1,10 @@
+E:\Repos\LifDex\src\core\LifDexCore\bin\Debug\netcoreapp2.2\LifDexCore.deps.json
+E:\Repos\LifDex\src\core\LifDexCore\bin\Debug\netcoreapp2.2\LifDexCore.runtimeconfig.json
+E:\Repos\LifDex\src\core\LifDexCore\bin\Debug\netcoreapp2.2\LifDexCore.runtimeconfig.dev.json
+E:\Repos\LifDex\src\core\LifDexCore\bin\Debug\netcoreapp2.2\LifDexCore.dll
+E:\Repos\LifDex\src\core\LifDexCore\bin\Debug\netcoreapp2.2\LifDexCore.pdb
+E:\Repos\LifDex\src\core\LifDexCore\obj\Debug\netcoreapp2.2\LifDexCore.csprojAssemblyReference.cache
+E:\Repos\LifDex\src\core\LifDexCore\obj\Debug\netcoreapp2.2\LifDexCore.AssemblyInfoInputs.cache
+E:\Repos\LifDex\src\core\LifDexCore\obj\Debug\netcoreapp2.2\LifDexCore.AssemblyInfo.cs
+E:\Repos\LifDex\src\core\LifDexCore\obj\Debug\netcoreapp2.2\LifDexCore.dll
+E:\Repos\LifDex\src\core\LifDexCore\obj\Debug\netcoreapp2.2\LifDexCore.pdb

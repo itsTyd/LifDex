@@ -21,7 +21,11 @@ class Item extends React.PureComponent<Props, {}> {
   render() {
     const { item, } = this.props;
 
-    return <div className="item">{item.name}</div>;
+    return (
+      <div className="item">
+        {item.name}
+      </div>
+    );
   }
 }
 

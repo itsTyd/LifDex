@@ -1,4 +1,6 @@
 .group-item {
+    width: 100%;
+    max-width: 120rem;
     margin-bottom: 1rem;
     color: rgba($color: white, $alpha: 0.8);
 
@@ -7,8 +9,8 @@
     }
 
     .title {
+        width: 100%;
         position: relative;
-        max-width: 20rem;
         font-size: 1.6rem;
         border-bottom: 1px solid rgba($color: white, $alpha: 0.2);
         padding: 1rem 0;
@@ -37,6 +39,8 @@
     .items-list {
         max-height: 100vh;
         list-style: none;
+        display: inline-flex;
+        flex-wrap: wrap;
         margin: 0;
         padding: 0;
         transform: translateY(0);
@@ -50,7 +54,7 @@
 
         .items-list {
             max-height: 0;
-            transform: translateY(-15rem);
+            transform: translateY(-100vh);
         }
     }
 }
